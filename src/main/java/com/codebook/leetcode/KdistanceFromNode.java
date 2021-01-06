@@ -9,14 +9,6 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-class TreeNode {
-     int val;
-     TreeNode left;
-     TreeNode right;
-     TreeNode(int x) { val = x; }
- }
-
-
 public class KdistanceFromNode {
 
     public static void main(String[] args) {
@@ -97,5 +89,12 @@ public class KdistanceFromNode {
 
         buildChildToParentMap(root.left, childToParentMap);
         buildChildToParentMap(root.right, childToParentMap);
+    }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
     }
 }
