@@ -1,5 +1,9 @@
 package com.codebook.genericsdemo;
 
+/**
+ * Lower bound and upper bound wildcard demo.
+ * Code lines, that have compiler error, are commented for demo.
+ */
 public class GenericsDemo {
 
     public static void main(String[] args) {
@@ -12,22 +16,22 @@ public class GenericsDemo {
         testUpperBoundWithA(boxWithB);
         testUpperBoundWithA(boxWithC);
 
-        testUpperBoundWithB(boxWithA);
+        //testUpperBoundWithB(boxWithA);
         testUpperBoundWithB(boxWithB);
         testUpperBoundWithB(boxWithC);
 
-        testUpperBoundWithC(boxWithA);
-        testUpperBoundWithC(boxWithB);
+        //testUpperBoundWithC(boxWithA);
+        //testUpperBoundWithC(boxWithB);
         testUpperBoundWithC(boxWithC);
 
         //Test lower bound.
         testLowerBoundWithA(boxWithA);
-        testLowerBoundWithA(boxWithB);
-        testLowerBoundWithA(boxWithC);
+        //testLowerBoundWithA(boxWithB);
+        //testLowerBoundWithA(boxWithC);
 
         testLowerBoundWithB(boxWithA);
         testLowerBoundWithB(boxWithB);
-        testLowerBoundWithB(boxWithC);
+        //testLowerBoundWithB(boxWithC);
 
         testLowerBoundWithC(boxWithA);
         testLowerBoundWithC(boxWithB);
@@ -38,21 +42,21 @@ public class GenericsDemo {
     private static void testUpperBoundWithA(Box<? extends TypeA> box){
         Object data = box.getData();
         TypeA dataA = box.getData();
-        TypeB dataB = box.getData();
-        TypeC dataC = box.getData();
-        box.setData(new TypeA());
-        box.setData(new TypeB());
-        box.setData(new TypeC());
+        //TypeB dataB = box.getData();
+        //TypeC dataC = box.getData();
+        //box.setData(new TypeA());
+        //box.setData(new TypeB());
+        //box.setData(new TypeC());
     }
 
     private static void testUpperBoundWithB(Box<? extends TypeB> box){
         Object data = box.getData();
         TypeA dataA = box.getData();
         TypeB dataB = box.getData();
-        TypeC dataC = box.getData();
-        box.setData(new TypeA());
-        box.setData(new TypeB());
-        box.setData(new TypeC());
+        //TypeC dataC = box.getData();
+        //box.setData(new TypeA());
+        //box.setData(new TypeB());
+        //box.setData(new TypeC());
     }
 
     private static void testUpperBoundWithC(Box<? extends TypeC> box){
@@ -60,16 +64,16 @@ public class GenericsDemo {
         TypeA dataA = box.getData();
         TypeB dataB = box.getData();
         TypeC dataC = box.getData();
-        box.setData(new TypeA());
-        box.setData(new TypeB());
-        box.setData(new TypeC());
+        //box.setData(new TypeA());
+        //box.setData(new TypeB());
+        //box.setData(new TypeC());
     }
 
     private static void testLowerBoundWithA(Box<? super TypeA> box){
         Object data = box.getData();
-        TypeA dataA = box.getData();
-        TypeB dataB = box.getData();
-        TypeC dataC = box.getData();
+        //TypeA dataA = box.getData();
+        //TypeB dataB = box.getData();
+        //TypeC dataC = box.getData();
         box.setData(new TypeA());
         box.setData(new TypeB());
         box.setData(new TypeC());
@@ -77,21 +81,21 @@ public class GenericsDemo {
 
     private static void testLowerBoundWithB(Box<? super TypeB> box){
         Object data = box.getData();
-        TypeA dataA = box.getData();
-        TypeB dataB = box.getData();
-        TypeC dataC = box.getData();
-        box.setData(new TypeA());
+        //TypeA dataA = box.getData();
+        //TypeB dataB = box.getData();
+        //TypeC dataC = box.getData();
+        //box.setData(new TypeA());
         box.setData(new TypeB());
         box.setData(new TypeC());
     }
 
     private static void testLowerBoundWithC(Box<? super TypeC> box){
         Object data = box.getData();
-        TypeA dataA = box.getData();
-        TypeB dataB = box.getData();
-        TypeC dataC = box.getData();
-        box.setData(new TypeA());
-        box.setData(new TypeB());
+        //TypeA dataA = box.getData();
+        //TypeB dataB = box.getData();
+        //TypeC dataC = box.getData();
+        //box.setData(new TypeA());
+        //box.setData(new TypeB());
         box.setData(new TypeC());
     }
 }
