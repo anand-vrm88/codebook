@@ -12,12 +12,12 @@ public class BinaryTree<D extends Comparable<D>> implements Tree<D> {
     }
 
     @Override
-    public Iterator<TreeNode<?>> iterator(IteratorStrategy strategy) {
+    public Iterator<TreeNode<D>> iterator(IteratorStrategy strategy) {
         switch (strategy){
             case IN_ORDER:
-                return new InOrderIterator(this.root);
+                return new InOrderIterator<>(this.root);
             case POST_ORDER:
-                return new PostOrderIterator(this.root);
+                return new PostOrderIterator<>(this.root);
             default:
                 throw new IllegalArgumentException(String.format("Invalid iterator strategy: %s", strategy));
         }

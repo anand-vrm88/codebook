@@ -15,17 +15,23 @@ public class TreeDemo {
         binarySearchTree.insert(6);
         binarySearchTree.insert(11);
         binarySearchTree.insert(8);
+
+        System.out.println(containsPair(binarySearchTree, 23));
     }
 
     private static boolean containsPair(BinarySearchTree<Integer> tree, int k) {
-        Iterator<TreeNode<?>> inOrderIterator = tree.iterator(IteratorStrategy.IN_ORDER);
-        Iterator<TreeNode<?>> postOrderIterator = tree.iterator(IteratorStrategy.POST_ORDER);
-
+        Iterator<TreeNode<Integer>> inOrderIterator = tree.iterator(IteratorStrategy.IN_ORDER);
+        Iterator<TreeNode<Integer>> postOrderIterator = tree.iterator(IteratorStrategy.POST_ORDER);
+        TreeNode<Integer> firstNode = inOrderIterator.next();
+        TreeNode<Integer> lastNode = postOrderIterator.next();
         while (inOrderIterator.hasNext() && postOrderIterator.hasNext()) {
-            TreeNode<?> firstNode = inOrderIterator.next();
-            TreeNode<?> lastNode = postOrderIterator.next();
-            Object data = firstNode.getData();
-
+            if ((firstNode.getData() + lastNode.getData()) == k) {
+                return true;
+            } else if ((firstNode.getData() + lastNode.getData()) < k) {
+                firstNode = inOrderIterator.next();
+            } else {
+                lastNode = postOrderIterator.next();
+            }
         }
         return false;
     }

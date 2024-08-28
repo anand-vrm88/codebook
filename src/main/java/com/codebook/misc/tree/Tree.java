@@ -6,7 +6,7 @@ public interface Tree<D> {
 
     void insert(D data);
 
-    Iterator<TreeNode<?>> iterator(IteratorStrategy strategy);
+    Iterator<TreeNode<D>> iterator(IteratorStrategy strategy);
 
     boolean isEmpty();
 }

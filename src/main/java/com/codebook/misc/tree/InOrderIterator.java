@@ -4,16 +4,16 @@ import java.util.Iterator;
 import java.util.Objects;
 import java.util.Stack;
 
-public class InOrderIterator implements Iterator<TreeNode<?>> {
+public class InOrderIterator<D extends Comparable<D>> implements Iterator<TreeNode<D>> {
 
-    private final Stack<TreeNode<?>> stack;
+    private final Stack<TreeNode<D>> stack;
 
-    public InOrderIterator(TreeNode<?> treeNode) {
+    public InOrderIterator(TreeNode<D> treeNode) {
         this.stack = new Stack<>();
         refreshStack(treeNode);
     }
 
-    private void refreshStack(TreeNode<?> treeNode) {
+    private void refreshStack(TreeNode<D> treeNode) {
         while (!Objects.isNull(treeNode)) {
             this.stack.push(treeNode);
             treeNode = treeNode.left;
@@ -31,8 +31,8 @@ public class InOrderIterator implements Iterator<TreeNode<?>> {
     }
 
     @Override
-    public TreeNode<?> next() {
-        TreeNode<?> treeNode = this.stack.pop();
+    public TreeNode<D> next() {
+        TreeNode<D> treeNode = this.stack.pop();
         refreshStack(treeNode.right);
         return treeNode;
     }
