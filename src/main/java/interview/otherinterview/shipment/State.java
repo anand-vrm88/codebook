@@ -1,4 +1,4 @@
-package interview.shipment;
+package interview.otherinterview.shipment;
 
 public enum State {
     ORDER_PLACED,
