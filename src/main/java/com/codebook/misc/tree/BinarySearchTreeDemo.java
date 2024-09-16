@@ -2,7 +2,7 @@ package com.codebook.misc.tree;
 
 import java.util.Iterator;
 
-public class TreeDemo {
+public class BinarySearchTreeDemo {
 
     public static void main(String[] args) {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
